@@ -36,10 +36,11 @@ jobs:
           echo test, and deploy your project.
       - name: files
         run: |
-          apt update && apt install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc  zstd openssl libcurl4-openssl-dev
+          sudo apt-get update && apt-get install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc  zstd openssl libcurl4-openssl-dev
       - name: unzip aospclan
         run: |
-          apt install aria2c aria2 && aria2c https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master.tar.gz && tar -xzvf master.tar.gz -C clang
+           sudo apt-get install aria2c aria2 && aria2c https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master.tar.gz && tar -xzvf master.tar.gz -C clang
+           sudo su
 
       - name: install clang
         run: |
