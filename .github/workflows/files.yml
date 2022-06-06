@@ -48,7 +48,7 @@ jobs:
            sudo alias cp="cp"
            cd clang/clang-r450784e/ && sudo cp -rf ./bin/* /bin && sudo cp -rf ./lib64/* /lib
  
-     - name: clang version
+      - name: clang version
         run: sudo clang -v
 
       - name: add env to repo
