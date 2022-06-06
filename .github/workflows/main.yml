@@ -17,17 +17,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-    - name: 安装依赖
-         run: |
+    - name: depend
+       run: |
           apt update
-          apt install python bash sed wget git curl zip tar expect make cmake automake autoconf llvm lld lldb clang gcc binutils bison perl gperf gawk flex bc  zstd openssl libcurl4-openssl-dev
-    - name: 解压aospclang
-          run: apt install aria2c aria2 && aria2c https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master.tar.gz && tar -xzvf master.tar.gz -C clang
-   -name: 安装clang
-           run: cd clang/clang-r450784e/ && /bin/cp -rf ./bin /bin && /bin/cp -rf ./lib64 /lib
-   -name: clang版本
-            run: clang -v
-  -name:上传到仓库[test]
-            run: |
-                  git add * && git commit -m "env" &&  git branch env && git checkout env && git push origin env
+          apt install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc  zstd openssl libcurl4-openssl-dev
+    - name: unzip aospclang
+       run: apt install aria2c aria2 && aria2c https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master.tar.gz && tar -xzvf master.tar.gz -C clang
+   -name: install clang
+     run: cd clang/clang-r450784e/ && /bin/cp -rf ./bin /bin && /bin/cp -rf ./lib64 /lib
+   -name: clang version
+     run: clang -v
+   -name:add env to repo
+     run: |
+          git add * && git commit -m "hi" &&  git branch hi && git checkout hi && git push origin hi
                   
