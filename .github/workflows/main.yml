@@ -8,7 +8,7 @@ on:
     branches: [ "android-r" ]
   workflow_dispatch:
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "build"s
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
