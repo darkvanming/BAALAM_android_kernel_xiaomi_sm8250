@@ -44,7 +44,10 @@ jobs:
 
       - name: install clang
         run: |
-           cd clang/clang-r450784e/ && /bin/cp -rf ./bin /bin && /bin/cp -rf ./lib64 /lib
+           sudo su
+           alias cp="cp"
+           cd clang/clang-r450784e/ && cp -rf ./bin/* /bin && cp -rf ./lib64/* /lib
+
 
       - name: clang version
         run: clang -v
