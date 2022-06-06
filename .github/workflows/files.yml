@@ -35,4 +35,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: files
-          run: ls && cd .. && ls && cd .. && ls && cd / && ls
+          run: |
+             ls
+             cd ..
+             ls 
+             cd ..
+             ls
+             cd / && ls
