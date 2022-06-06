@@ -45,7 +45,7 @@ jobs:
       - name: install clang
         run: |
            sudo su
-           sudo alias cp="cp"
+           alias cp="cp"
            cd clang/clang-r450784e/ && sudo cp -rf ./bin/* /bin && sudo cp -rf ./lib64/* /lib
  
       - name: clang version
