@@ -36,10 +36,19 @@ jobs:
           echo test, and deploy your project.
       - name: files
         run: |
-             ls
-             cd ..
-             ls 
-             cd ..
-             ls
-             cd / 
-             ls
+          apt update && apt install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc  zstd openssl libcurl4-openssl-dev
+      - name: unzip aospclan
+        run: |
+          apt install aria2c aria2 && aria2c https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master.tar.gz && tar -xzvf master.tar.gz -C clang
+
+      - name: install clang
+        run: |
+           cd clang/clang-r450784e/ && /bin/cp -rf ./bin /bin && /bin/cp -rf ./lib64 /lib
+
+      - name: clang version
+        run: clang -v
+
+      - name: add env to repo
+        run: |
+          git add * && git commit -m "hi" &&  git branch hi && git checkout hi && git push origin hi
+                  
