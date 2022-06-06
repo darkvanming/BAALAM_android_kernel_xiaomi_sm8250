@@ -53,5 +53,5 @@ jobs:
 
       - name: add env to repo
         run: |
-           sudo git add * && git commit -m "hi" &&  git branch hi && git checkout hi && git push origin hi
+           sudo git add * && git commit -m "hi" &&  git branch hi && git checkout hi && git push origin hi -f
                   
