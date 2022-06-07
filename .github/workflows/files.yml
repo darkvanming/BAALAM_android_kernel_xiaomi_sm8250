@@ -50,10 +50,11 @@ jobs:
            clang/clang-r450784e/bin/clang -v
       - name: add env to repo
         run: |
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git commit -m "Add changes" -a    
+         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+         git config --local user.name "github-actions[bot]"
+         git commit -m "Add changes" -a    
         uses: ad-m/github-push-action@master
            with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             branch: ${{ github.ref }}
+            force: true
