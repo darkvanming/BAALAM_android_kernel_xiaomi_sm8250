@@ -46,12 +46,13 @@ jobs:
         run: |
            sudo su
            alias cp="cp"
-           cd clang/clang-r450784e/ && sudo cp -rf ./bin/* /bin && sudo cp -rf ./lib64/* /lib
+           clang/clang-r450784e/bin/clang -v
  
       - name: clang version
         run: sudo clang -v
 
       - name: add env to repo
         run: |
-           sudo git branch hi && git checkout hi && git push origin hi --force
-                  
+           sudo git add * -f 
+           git commit  -m  "env"
+           git push -u origin master -f
