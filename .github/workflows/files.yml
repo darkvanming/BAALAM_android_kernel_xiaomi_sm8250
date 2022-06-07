@@ -48,6 +48,7 @@ jobs:
            clang/clang-r450784e/bin/clang -v
       - name: add env to repo
         run: |
+           sudo chown -R "${USER:-$(id -un)}" . 
            git config --local user.email "actions@github.com"
            git config --local user.name "GitHub Actions"
            sudo git add -A -f
