@@ -52,4 +52,4 @@ jobs:
            sudo git config --local user.name "GitHub Actions"
            sudo git add -A -f
            sudo git commit -m  "env"
-           sudo git push -u origin hi -f
+           sudo git push origin hi -f
