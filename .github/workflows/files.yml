@@ -52,4 +52,4 @@ jobs:
            sudo git config --local user.name "GitHub Actions"
            sudo git add -A
            sudo git commit -m  "env"
-           sudo git push origin hi --force
+           sudo git push origin android-r --force
