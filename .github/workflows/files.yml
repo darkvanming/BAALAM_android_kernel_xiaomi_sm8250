@@ -1,5 +1,5 @@
 - name: CI
-on:
+  on:
   # Triggers the workflow on push or pull request events but only for the "android-r" branch
   push:
     branches: [ "android-r" ]
