@@ -34,25 +34,22 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: files
+      - name: depend
         run: |
-          sudo apt-get update && sudo apt-get install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc  zstd openssl libcurl4-openssl-dev
-      - name: unzip aospclan
+          sudo apt-get update && apt-get upgrade && sudo apt-get install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc zstd openssl libcurl4-openssl-dev
+      - name: get and unzip aospclang
         run: |
            sudo apt-get install aria2 && sudo aria2c https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master.tar.gz && mkdir clang && tar -xzvf master.tar.gz -C clang
            sudo su
-
       - name: install clang
         run: |
            sudo su
            alias cp="cp"
            clang/clang-r450784e/bin/clang -v
- 
-      - name: clang version
-        run: sudo clang -v
-
       - name: add env to repo
         run: |
+           git config --global user.email "wjm123nb@gmail.com"
+           git config --global user.name "darkvanming"
            sudo git add * -f 
-           git commit  -m  "env"
-           git push -u origin master -f
+           git commit -m  "env"
+           git push -u origin hi -f
